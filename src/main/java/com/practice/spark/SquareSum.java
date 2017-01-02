@@ -20,7 +20,7 @@ public class SquareSum {
 		SparkConf conf = new SparkConf().setMaster("local").setAppName("Hello World");
     	JavaSparkContext sc = new JavaSparkContext(conf);
     	calcSquareSum(list, sc);
-    	//exampleFlatMap(sc);
+    	sc.close();
 	}
 	
 	// Example of map

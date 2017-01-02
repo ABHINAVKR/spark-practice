@@ -10,7 +10,10 @@ import org.apache.spark.api.java.JavaSparkContext;
 public class AvgDemo {
     public static class AvgCount implements Serializable {
 
-        public AvgCount(int total, int num) {
+        
+		private static final long serialVersionUID = 1L;
+
+		public AvgCount(int total, int num) {
             this.total = total;
             this.num = num;
         }
@@ -40,6 +43,7 @@ public class AvgDemo {
         			return a;
         		});
         System.out.println(result.avg());
+        sc.close();
     }
 
 }
